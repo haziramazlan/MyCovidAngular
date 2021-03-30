@@ -26,6 +26,8 @@ export class CovidComponent implements OnInit {
 
   public updateDesc: any;
 
+  public postDesc: any;
+
   constructor(
     private httpClient: HttpClient,
     public covidApiService: CovidApiService,
@@ -36,11 +38,11 @@ export class CovidComponent implements OnInit {
   ngOnInit(): void {
     this.descObject = {};
     this.updateDesc = {};
+    this.postDesc = {};
     this.getCovid();
     this.getCovidDesc();
 
     console.log("Covid Component Inited");
-    console.log("Total of Description Column Row --->" + this.descObject.length);
   }
 
   getCovid(): any {
@@ -61,6 +63,7 @@ export class CovidComponent implements OnInit {
     this.covidApiService.getCovidDesc().subscribe((data: any) => {
       console.log(data);
       this.covidTotalDesc = data;
+      console.log("Total of Description Column Rows ---> " + this.covidTotalDesc.length);
     });
 
     return this.covidTotalDesc;
@@ -88,8 +91,6 @@ export class CovidComponent implements OnInit {
           this.getCovidDesc();
         });
     }
-
-
   }
 
   addDesc() {
@@ -119,4 +120,26 @@ export class CovidComponent implements OnInit {
         this.getCovidDesc();
       });
   }
+
+  addPost() {
+
+    this.covidApiService.addPost(this.postDesc).then(
+      resolve=> {
+        this.getCovidDesc();
+      });
+    }
+
+    deleteDescSoap() {
+      console.log("covidTotalDesc length-->" + this.covidTotalDesc.length);
+  
+      if (this.covidTotalDesc.length == 0) {
+        this.confirmationDialogService.confirm(GlobalConstants.errorMessageFE, "List is Empty");
+      }
+      else {
+        this.covidApiService.deleteDescSoap(this.descObject.desc).then(
+          resolve => {
+            this.getCovidDesc();
+          });
+      }
+    }
 }

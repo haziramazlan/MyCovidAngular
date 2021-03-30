@@ -64,4 +64,26 @@
   </form>
   <!-- Put record Ends  -->
 
+  <!-- Add Post starts  -->
+  <br><br><br>
+  <legend style="color:black;font-weight:bold;">Section D. Add Post Record</legend>
+  
+  <label for="Description">Description</label>
+  <input type="text" id="postDesc" [(ngModel)]="postDesc.description" name="post">
+  <p></p>
+  
+  <input type="submit" value="Post" (click)="addPost()">
+  <!-- Add Post ends  -->
+
+  <!-- Delete Soap starts  -->
+  <br><br><br>
+  <legend style="color:black;font-weight:bold;">Section E. Delete Soap Record</legend>
+  
+  <label for="Description">Description</label>
+  <input type="text" id="deleteDescSoap" [(ngModel)]="descObject.desc" name="desc">
+  <p></p>
+  
+  <input type="submit" value="Delete" (click)="deleteDescSoap()">
+  <!-- Delete Soap ends  -->
+
 </div>
