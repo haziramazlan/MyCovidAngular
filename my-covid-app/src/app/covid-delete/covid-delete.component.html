@@ -1,0 +1,17 @@
+<!-- Delete Soap starts  -->
+<br><br><br>
+<legend style="color:black;font-weight:bold;">Section E. Delete Soap Record</legend>
+
+<label for="Description">Description</label>
+<input type="text" id="deleteDescSoap" [(ngModel)]="descObject.desc" name="desc">
+<p></p>
+
+<input type="submit" value="Delete" (click)="deleteDescSoap()">
+<!-- Delete Soap ends  -->
+
+<!-- Find Duplicate and Delete starts  -->
+<br><br><br>
+<legend style="color:black;font-weight:bold;">Section F. Remove Duplicate Description</legend>
+
+<input type="submit" value="Remove" (click)="findDuplicateNDelete()">
+<!-- Find Duplicate and Delete ends  -->

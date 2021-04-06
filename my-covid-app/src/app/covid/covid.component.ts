@@ -4,16 +4,16 @@ import { CovidApiService } from '../covidapi.service';
 import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog.service';
 import { GlobalConstants } from 'src/environments/GlobalConstants';
 import { GlobalMethods } from 'src/environments/GlobalMethods';
-import { CovidCasesDesc } from 'src/model/CovidCasesDesc';
 
 @Component({
   selector: 'app-covid',
   providers: [CovidApiService],
-  styleUrls: ['./covid.component.css'],
+  styleUrls: ['../sharecss/share.component.css'],
   templateUrl: './covid.component.html',
-
 })
+
 export class CovidComponent implements OnInit {
+  
   public covidTotalDaily: any;
 
   public covidTotalDesc: any[] = [];
@@ -127,19 +127,5 @@ export class CovidComponent implements OnInit {
       resolve=> {
         this.getCovidDesc();
       });
-    }
-
-    deleteDescSoap() {
-      console.log("covidTotalDesc length-->" + this.covidTotalDesc.length);
-  
-      if (this.covidTotalDesc.length == 0) {
-        this.confirmationDialogService.confirm(GlobalConstants.errorMessageFE, "List is Empty");
-      }
-      else {
-        this.covidApiService.deleteDescSoap(this.descObject.desc).then(
-          resolve => {
-            this.getCovidDesc();
-          });
-      }
     }
 }

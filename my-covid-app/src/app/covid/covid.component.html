@@ -75,15 +75,8 @@
   <input type="submit" value="Post" (click)="addPost()">
   <!-- Add Post ends  -->
 
-  <!-- Delete Soap starts  -->
-  <br><br><br>
-  <legend style="color:black;font-weight:bold;">Section E. Delete Soap Record</legend>
-  
-  <label for="Description">Description</label>
-  <input type="text" id="deleteDescSoap" [(ngModel)]="descObject.desc" name="desc">
-  <p></p>
-  
-  <input type="submit" value="Delete" (click)="deleteDescSoap()">
-  <!-- Delete Soap ends  -->
+  <!-- Section E and F starts  -->
+  <app-covid-delete></app-covid-delete>
+  <!-- Section E and F ends  -->
 
 </div>

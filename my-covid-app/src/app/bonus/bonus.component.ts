@@ -4,7 +4,6 @@ import { CovidApiService } from '../covidapi.service';
 import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog.service';
 import { GlobalConstants } from 'src/environments/GlobalConstants';
 import { GlobalMethods } from 'src/environments/GlobalMethods';
-import { CovidCasesBonus } from 'src/model/CovidCasesBonus';
 
 @Component({
   selector: 'app-bonus',
